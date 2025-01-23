@@ -156,14 +156,6 @@ For more information on how to access storage in K8s, refer [here](#accessing-st
 - Install the Nebius AI CLI ([instructions](https://docs.nebius.ai/cli/install))
 - Install jq ([instructions](https://jqlang.github.io/jq/download/))
 
-### Adding credentials to the kubectl configuration file
-
-1. Perform the following command from the terraform deployment folder:
-
-```bash
-nebius mk8s v1 cluster get-credentials --id $(cat terraform.tfstate | jq -r '.resources[] | select(.type == "nebius_mk8s_v1_cluster") | .instances[].attributes.id') --external
-```
-
 
 ### Add credentials to the kubectl configuration file
 1. Run the following command from the terraform deployment folder:
